@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AccountService } from 'src/app/accounts.service';
 import { LogginService } from 'src/app/loggin.service';
+import * as tslib from 'tslib';
+
 
 @Component({
   selector: 'app-account',
