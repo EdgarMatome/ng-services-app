@@ -8,7 +8,7 @@ import * as tslib from 'tslib';
   selector: 'app-account',
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css'],
-  providers: [LogginService, AccountService],
+  // providers: [LogginService],
 })
 export class AccountComponent {
   @Input() account: { name: string; status: string };
@@ -22,6 +22,7 @@ export class AccountComponent {
   onSetTo(status: string) {
     this.accountsService.updateStatus(this.id, status);
     // console.log('A server status changed, new status: ' + status);
-    this.logginService.logStatusChanged(status);
+    // this.logginService.logStatusChanged(status);
+    this.accountsService.statusUpdated.emit(status);
   }
 }
